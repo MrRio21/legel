@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Advisor extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name', 'email', 'password', 'phone', 'type',
+    ];
 }
