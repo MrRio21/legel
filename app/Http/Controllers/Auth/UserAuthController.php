@@ -24,14 +24,15 @@ class UserAuthController extends Controller
     public function register(UserRequest $request)
     {
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         Auth::login($user);
 
-        return redirect('/home');
+        return redirect('home');
     }
 
     public function showLoginForm()
@@ -39,7 +40,7 @@ class UserAuthController extends Controller
         return view('auth.login');
     }
 
-    public function login(UserRequest $request)
+    public function login(Request $request)
     {
         // Validation logic
         $request->validate([
@@ -49,7 +50,7 @@ class UserAuthController extends Controller
 
         // Attempt to log in the user
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/home'); // Adjust the redirect path as needed
+            return view('home');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);
@@ -58,7 +59,7 @@ class UserAuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/'); // Adjust the redirect path as needed
+        return redirect('login');
     }
 
     public function showChangePasswordForm()
