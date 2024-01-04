@@ -1,4 +1,6 @@
 @extends('layouts.layout')
+    <link rel="stylesheet" href="{{asset('assets/css/Login.css')}}" media="screen">
+
 <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
 
     <section class="u-clearfix u-custom-color-3 u-section-1" id="carousel_b48b">
@@ -67,7 +69,7 @@
                 </div>
                 <h6 class="u-align-center u-text u-text-3">
                   <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-4 u-text-hover-palette-2-base u-btn-2"
-                    data-href="CreateAccount.html" href="CreateAccount.html"> Create account</a>
+                    data-href="{{route('register')}}" href="{{route('register')}}"> Create account</a>
                 </h6>
                 <h6 class="u-align-center u-text u-text-grey-25 u-text-4"> By creating an account you accept our<br>
                 </h6>

@@ -32,6 +32,7 @@ Route::post('/logout', [UserAuthController::class, 'logout'])->name('logout');
 Route::get('/change-password', [UserAuthController::class, 'showChangePasswordForm'])->name('change.password');
 Route::post('/change-password', [UserAuthController::class, 'changePassword']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 
 

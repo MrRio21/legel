@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+    <link rel="stylesheet" href="{{asset('assets\css\CreateAccountForAdviser.css')}}" media="screen">
 
 <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
 
